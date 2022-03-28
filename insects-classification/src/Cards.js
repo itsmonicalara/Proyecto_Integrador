@@ -8,6 +8,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import image_reptil from './media/lizard.jpg';
+import Alert from '@material-ui/lab/Alert';
+import Collapse from '@material-ui/core/Collapse';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
+
 
 const useStyles = makeStyles({
     root: {
@@ -22,9 +27,13 @@ const useStyles = makeStyles({
     },
 });
 
+
+
 function Cards() {
 
     const classes = useStyles();
+    const [open, setOpen] = React.useState(true);
+
 
   return (
     <div className='cards'>
@@ -48,65 +57,14 @@ function Cards() {
                 </CardActionArea>
                 <CardActions>
             <Button size="small" color="primary">
-            Share
+            Compartir
             </Button>
-            <Button size="small" color="primary">
-            Learn More
-            </Button>
-      </CardActions>
-    </Card>
-
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-            <Button size="small" color="primary">
-            Share
-            </Button>
-            <Button size="small" color="primary">
-            Learn More
-            </Button>
-      </CardActions>
-    </Card>
-
-
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-            <Button size="small" color="primary">
-            Share
-            </Button>
-            <Button size="small" color="primary">
-            Learn More
+            <Button disabled={open}
+                    variant="outlined"
+                    onClick={() => {
+                    setOpen(true);
+            }} size="small" color="primary">
+            Aprender más
             </Button>
       </CardActions>
     </Card>
@@ -129,11 +87,97 @@ function Cards() {
                 </CardContent>
                 </CardActionArea>
                 <CardActions>
-            <Button size="small" color="primary">
-            Share
+                <Button size="small" color="primary">
+            Compartir
             </Button>
-            <Button size="small" color="primary">
-            Learn More
+            <Button disabled={open}
+                    variant="outlined"
+                    onClick={() => {
+                    setOpen(true);
+            }} size="small" color="primary">
+            Aprender más
+            </Button>
+      </CardActions>
+    </Card>
+
+
+    <Card className={classes.root}>
+                <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image={image_reptil}
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Lizard
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                        across all continents except Antarctica
+                    </Typography>
+                </CardContent>
+                </CardActionArea>
+                <CardActions>
+                <Button size="small" color="primary">
+            Compartir
+            </Button>
+            <Button disabled={open}
+                    variant="outlined"
+                    onClick={() => {
+                    setOpen(true);
+            }} size="small" color="primary">
+            Aprender más
+            </Button>
+      </CardActions>
+    </Card>
+
+    <Collapse in={open}>
+        <Alert
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+        >
+          Esta especie no es venenosa!
+        </Alert>
+      </Collapse> 
+
+    <Card className={classes.root}>
+                <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image={image_reptil}
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Lizard
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                        across all continents except Antarctica
+                    </Typography>
+                </CardContent>
+                </CardActionArea>
+                <CardActions>
+                <Button size="small" color="primary">
+            Compartir
+            </Button>
+            <Button disabled={open}
+                    variant="outlined"
+                    onClick={() => {
+                    setOpen(true);
+            }} size="small" color="primary">
+            Aprender más
             </Button>
       </CardActions>
     </Card>
@@ -156,11 +200,15 @@ function Cards() {
                 </CardContent>
                 </CardActionArea>
                 <CardActions>
-            <Button size="small" color="primary">
-            Share
+                <Button size="small" color="primary">
+            Compartir
             </Button>
-            <Button size="small" color="primary">
-            Learn More
+            <Button disabled={open}
+                    variant="outlined"
+                    onClick={() => {
+                    setOpen(true);
+            }} size="small" color="primary">
+            Aprender más
             </Button>
       </CardActions>
     </Card>
@@ -183,11 +231,15 @@ function Cards() {
                 </CardContent>
                 </CardActionArea>
                 <CardActions>
-            <Button size="small" color="primary">
-            Share
+                <Button size="small" color="primary">
+            Compartir
             </Button>
-            <Button size="small" color="primary">
-            Learn More
+            <Button disabled={open}
+                    variant="outlined"
+                    onClick={() => {
+                    setOpen(true);
+            }} size="small" color="primary">
+            Aprender más
             </Button>
       </CardActions>
     </Card>

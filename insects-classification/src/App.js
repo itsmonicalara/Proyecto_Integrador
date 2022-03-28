@@ -4,8 +4,9 @@ import Logout from './Logout';
 import Profile from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 import Header from './Header';
-import { BrowserRouter } from 'react-router-dom';
 import Cards from './Cards';
+import Map from './Map';
+
 
 function App() {
 
@@ -17,9 +18,19 @@ function App() {
       {isAuthenticated ? (
         <>
           <Header/>
-          <Cards/>
-          {/* <Profile />
-          <Logout /> */}
+          <Cards/>   
+          {/* <Profile/> */}
+          {/* <Map/> */}
+          {/* <Logout/> */}
+          {/* <Router>
+            <Routes>
+            <Route path= '/' element = {<Login />} />
+            <Route path='/map' element = {<Map />} />
+            <Route path= '/logout' element = {<Logout />} />
+            <Route path= '/profile' element = {<Profile />} />
+            <Route path= '/listings'  element = {<Cards />} />
+            </Routes>
+          </Router>      */}
         </>
       ) : (
         <Login />
