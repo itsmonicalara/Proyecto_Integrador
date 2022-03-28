@@ -1,0 +1,19 @@
+.map{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.map > h2 {
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+.map > h3 {
+    font-weight: 400;
+}
+
+.map_info {
+    object-fit: contain;
+    height: 200px;
+    text-align: center;
+}

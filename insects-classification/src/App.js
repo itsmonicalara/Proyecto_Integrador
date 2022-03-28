@@ -18,10 +18,11 @@ function App() {
       {isAuthenticated ? (
         <>
           <Header/>
-          <Cards/>   
+          {/* <Cards/>    */}
           {/* <Profile/> */}
-          {/* <Map/> */}
+          <Map/>
           {/* <Logout/> */}
+
           {/* <Router>
             <Routes>
             <Route path= '/' element = {<Login />} />
