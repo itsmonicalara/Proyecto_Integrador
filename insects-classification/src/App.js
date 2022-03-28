@@ -4,6 +4,8 @@ import Logout from './Logout';
 import Profile from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 import Header from './Header';
+import { BrowserRouter } from 'react-router-dom';
+import Cards from './Cards';
 
 function App() {
 
@@ -15,8 +17,9 @@ function App() {
       {isAuthenticated ? (
         <>
           <Header/>
-          <Profile />
-          <Logout />
+          <Cards/>
+          {/* <Profile />
+          <Logout /> */}
         </>
       ) : (
         <Login />

@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 
 const headersData = [
   {
-    label: "Lista de Insetos",
+    label: "Lista de Insectos",
     href: "/listings",
   },
   {
