@@ -14,6 +14,10 @@ function Login() {
       <div className='login_logo'>
         <img src={logo} alt=''></img>      
       </div>
+      <div className='description'>
+        <h3>Clasificación de Insectos</h3>
+        <h4>Proyecto Integrador - Versión Alpha</h4>
+      </div>
       <Button onClick={() => loginWithRedirect()}>Iniciar sesión</Button>
     
     </div>
