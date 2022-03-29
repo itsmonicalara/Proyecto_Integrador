@@ -6,6 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Header from './Header';
 import Cards from './Cards';
 import Map from './Map';
+import { Link } from "react-router-dom";
 
 
 function App() {
@@ -18,9 +19,18 @@ function App() {
       {isAuthenticated ? (
         <>
           <Header/>
-          {/* <Cards/>    */}
+          <Cards/>
+          <nav
+              style={{
+              borderBottom: "solid 1px",
+              paddingBottom: "1rem",
+              }}
+            >
+            <Link to="/invoices">Invoices</Link> |{" "}
+            <Link to="/expenses">Expenses</Link>
+          </nav>   
           {/* <Profile/> */}
-          <Map/>
+          {/* <Map/> */}
           {/* <Logout/> */}
 
           {/* <Router>

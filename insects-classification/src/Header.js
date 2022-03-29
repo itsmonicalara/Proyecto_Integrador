@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   header: {
-    backgroundColor: "#400CCC",
+    backgroundColor: "#6aa84f",
     paddingRight: "79px",
     paddingLeft: "118px",
   },
@@ -26,8 +26,12 @@ const headersData = [
     href: "/listings",
   },
   {
-    label: "Mapa",
-    href: "/map",
+    label: "Eventos",
+    href: "/events",
+  },
+  {
+    label: "Clasificador",
+    href: "/tool",
   },
   {
     label: "Mi cuenta",
@@ -48,7 +52,7 @@ export default function Header() {
 
   const header_title = (
     <Typography variant="h6" component="h1" className={logo}>
-      Clasificación de insectos
+      InsectoRed México
     </Typography>
   );
 
