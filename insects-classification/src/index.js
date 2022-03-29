@@ -29,8 +29,9 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="listings" element={<><Header /><Cards /></>} />
         <Route path="events" element={<><Header /><Map /></>} />
-        {/* Here goes the ML route */}
+        <Route path="tool" element={<><Header /></>} />
         <Route path="account" element={<><Header /><Profile /><Logout /></>} />
+        <Route path="logout" element={<><Header /><Logout /></>} />
       </Routes>
     </Auth0Provider>
     </Router>
