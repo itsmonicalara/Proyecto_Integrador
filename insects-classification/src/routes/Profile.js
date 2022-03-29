@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import Avatar from '@material-ui/core/Avatar';
-import './Profile.css'
+import '../styles/Profile.css'
 
      
 function Profile() {

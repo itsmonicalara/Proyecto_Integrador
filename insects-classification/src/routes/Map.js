@@ -1,7 +1,7 @@
 import React from 'react'
-import './Map.css'
+import '../styles/Map.css'
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import MapChart from "./MapChart";
+import MapChart from "../MapChart";
 
 
 function Map() {    

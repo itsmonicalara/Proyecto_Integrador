@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
@@ -10,7 +10,12 @@ import {
   Route,
 } from "react-router-dom";
 import { render } from "react-dom";
-import Expenses from "./routes/expenses";
+import Cards from './routes/Cards';
+import Header from './Header';
+import Map from './routes/Map';
+import Profile from './routes/Profile';
+import Logout from './routes/Logout';
+
 
 
 ReactDOM.render(
@@ -22,7 +27,10 @@ ReactDOM.render(
     redirectUri={window.location.origin}>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="expenses" element={<Expenses />} />
+        <Route path="listings" element={<><Header /><Cards /></>} />
+        <Route path="events" element={<><Header /><Map /></>} />
+        {/* Here goes the ML route */}
+        <Route path="account" element={<><Header /><Profile /><Logout /></>} />
       </Routes>
     </Auth0Provider>
     </Router>
