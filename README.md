@@ -1,7 +1,7 @@
 # Proyecto_Integrador
  Versión alpha del proyecto final para la materia 'Proyecto Integrador para el desarrollo de soluciones empresariales''.
  
- Para poder correr el proyecto, tienes que instalar las dependencias necesarias con los siguiente comando:
+ Para poder correr el proyecto, tienes que instalar las dependencias necesarias con los siguientes comandos:
  ```
 cd insects-classification
 npm i
