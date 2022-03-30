@@ -9,7 +9,7 @@ function Logout() {
 
   return (
     <div className='logout'>
-      <Button onClick={() => logout({ returnTo: window.location.origin })}>Logout</Button>
+      <Button onClick={() => logout({ returnTo: window.location.origin })}>Cerrar sesión</Button>
     </div>
   )
 }
