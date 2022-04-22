@@ -12,7 +12,8 @@ let Spider = require('./spider.model');
 
 app.use(cors());
 app.use(bodyParser.json());
-mongoose.connect('mongodb://127.0.0.1:27017/spiders', { useNewUrlParser: true });
+// Name of database: proyecto_db
+mongoose.connect('mongodb://127.0.0.1:27017/proyecto_db', { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
@@ -32,11 +33,11 @@ spiderRoutes.route('/add').post(function(req, res) {
 
 // Retrieve all the spiders in the database
 spiderRoutes.route('/').get(function(req, res) {
-    Spider.find(function(err, spiders) {
+    Spider.find(function(err, proyecto_db) {
         if (err) {
             console.log(err);
         } else {
-            res.json(spiders);
+            res.json(proyecto_db);
         }
     });
 });
@@ -72,7 +73,7 @@ spiderRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
-app.use('/spiders', spiderRoutes);
+app.use('/proyecto_db', spiderRoutes);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
