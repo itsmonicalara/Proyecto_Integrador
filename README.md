@@ -10,6 +10,13 @@ Posteriormente, se tiene que correr el siguiente comando para correr el proyecto
 ```
 npm start
 ```
+
+Adicionalmente, ingresa el siguiente comando en otra terminal para poder correr el servidor:
+```
+nodemon server
+```
 Finalmente, accede al [localhost](http://localhost:3000) para poder visualizar la aplicación.
+
+
 
  
