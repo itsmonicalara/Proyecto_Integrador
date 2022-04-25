@@ -54,10 +54,10 @@ function Cards()  {
         <br></br>
      
         <Container>
-        <h1 className="justify-content-center text-center">Lista de Insectos</h1>
+        <h1 className="justify-content-center text-center">Lista de Arañas</h1>
           <Row className="d-inline-flex p-2 col-example">
           <Button class="text-center" size="lg" variant="primary" type="submit" onClick={routeChange}>  
-              Insertar Insecto
+              Insertar Araña
                 </Button>
             </Row>
         </Container>
