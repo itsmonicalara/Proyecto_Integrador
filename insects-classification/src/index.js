@@ -15,6 +15,8 @@ import Header from './Header';
 import Map from './routes/Map';
 import Profile from './routes/Profile';
 import Logout from './routes/Logout';
+import Insertar from './routes/Insertar';
+import DetailCardInsect from './routes/DetailCardInsect';
 
 
 
@@ -32,6 +34,8 @@ ReactDOM.render(
         <Route path="tool" element={<><Header /></>} />
         <Route path="account" element={<><Header /><Profile /><Logout /></>} />
         <Route path="logout" element={<><Header /><Logout /></>} />
+        <Route path="insertar" element={<><Header /><Insertar /></>} />
+        <Route path="/item/:id" element={<><Header /><DetailCardInsect /></>} />
       </Routes>
     </Auth0Provider>
     </Router>

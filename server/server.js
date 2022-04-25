@@ -60,10 +60,9 @@ spiderRoutes.route('/update/:id').post(function(req, res) {
             spider.description = req.body.description;
             spider.danger = req.body.danger;
             spider.url = req.body.url;
-            spider.info.species = req.body.info.species;
-            spider.info.family = req.body.info.family;
-            spider.info.filo = req.body.info.filo;
-            spider.info.scientificName = req.body.info.scientificName;
+            spider.species = req.body.species;
+            spider.family = req.body.family;
+            spider.scientificName = req.body.scientificName;
             spider.save().then(spider => {
                 res.json('Spider updated!');
             })

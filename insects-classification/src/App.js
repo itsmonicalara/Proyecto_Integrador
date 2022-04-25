@@ -1,7 +1,7 @@
 import './styles/App.css';
 import Login from './routes/Login';
 import { useAuth0 } from '@auth0/auth0-react';
-import Header from './Header';
+import MainHeader from './routes/MainHeader';
 import { Link } from "react-router-dom";
 import Home from './routes/Home';
 
@@ -15,7 +15,7 @@ function App() {
       {/* If theres a user, show profile and logout. Otherwise only login */}
       {isAuthenticated ? (
         <>
-          <Header/>
+          <MainHeader/>
           <Home/>
         </>
       ) : (

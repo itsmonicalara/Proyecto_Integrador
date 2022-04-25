@@ -11,25 +11,25 @@ let Spider = new Schema({
         required: true
     },
     danger: {
-        type: Boolean,
+        type: String,
         required: true
     },
     url: {
-        type: String
+        type: String,
+        required: true
     },
-    info: { 
-        species: {
-            type: String
-        },
-        family: {
-            type: String
-        },
-        filo: {
-            type: String
-        },
-        scientificName: {
-            type: String
-        },
+    species: {
+        type: String,
+        required: true
+    },
+    family: {
+        type: String,
+        required: true
+    },
+    scientificName: {
+        type: String,
+        required: true
+    
     }
 });
 

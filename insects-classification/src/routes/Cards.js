@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect, useS, useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import image_reptil from '../media/lizard.jpg';
 import Alert from '@material-ui/lab/Alert';
@@ -13,240 +12,80 @@ import Collapse from '@material-ui/core/Collapse';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import axios from 'axios';
+import CardInsectos from '../componentes/cardInsecto';
+import { useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FormGroup, Form, Button, Container,Row,Col } from 'react-bootstrap';
 
 
-const useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-      marginTop: '100px',
-      marginLeft: '70px',
-      display: 'inline-block',
-      alignItems: 'center',
-    },
-    media: {
-      height: 140,
-    },
-});
+function Cards()  {
+ 
+  // const modealInstertar = false
 
 
 
-function Cards() {
+  const URL = "http://localhost:4000/proyecto_db"
+  let navigate = useNavigate(); 
+  const getData = async () => {
+    const response = axios.get(URL);
+    return response;
+  }
 
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(true);
+  const [list, setList] = useState([]);
+  
+  
 
+  useEffect(() =>{
+
+    getData("/").then((response) =>{
+      setList(response.data);
+    })
+  }, [])
+
+
+  const routeChange = () =>{ 
+    let path = '/insertar'; 
+    navigate(path);
+  }
 
   return (
-    <div className='cards'>
-        <div className='card_info'>
-            <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-            <Button size="small" color="primary">
-            Compartir
-            </Button>
-            <Button disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                    setOpen(true);
-            }} size="small" color="primary">
-            Aprender más
-            </Button>
-      </CardActions>
-    </Card>
+    <div>
+        <h1 >hacer padding a la Lista</h1>
+        <br></br>
+     
+        <Container>
+        <h1 className="justify-content-center text-center">Lista de Insectos</h1>
+          <Row className="d-inline-flex p-2 col-example">
+          <Button class="text-center" size="lg" variant="primary" type="submit" onClick={routeChange}>  
+              Insertar Insecto
+                </Button>
+            </Row>
+        </Container>
+      
+        
 
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary">
-            Compartir
-            </Button>
-            <Button disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                    setOpen(true);
-            }} size="small" color="primary">
-            Aprender más
-            </Button>
-      </CardActions>
-    </Card>
-
-
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary">
-            Compartir
-            </Button>
-            <Button disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                    setOpen(true);
-            }} size="small" color="primary">
-            Aprender más
-            </Button>
-      </CardActions>
-    </Card>
-
-    <Collapse in={open}>
-        <Alert
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
+          {
+            list.map((spider) =>(
+              <Container>
+                <Row>
+                  <Col>
+                    <CardInsectos
+                      key={spider._id}
+                      spider = {spider}
+                    />
+                  </Col> 
+                </Row>
+              </Container>
+              
+            
+            ))
+              
           }
-        >
-          Esta especie no es venenosa!
-        </Alert>
-      </Collapse> 
+     </div>
 
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary">
-            Compartir
-            </Button>
-            <Button disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                    setOpen(true);
-            }} size="small" color="primary">
-            Aprender más
-            </Button>
-      </CardActions>
-    </Card>
-
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary">
-            Compartir
-            </Button>
-            <Button disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                    setOpen(true);
-            }} size="small" color="primary">
-            Aprender más
-            </Button>
-      </CardActions>
-    </Card>
-
-    <Card className={classes.root}>
-                <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image={image_reptil}
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                </CardActionArea>
-                <CardActions>
-                <Button size="small" color="primary">
-            Compartir
-            </Button>
-            <Button disabled={open}
-                    variant="outlined"
-                    onClick={() => {
-                    setOpen(true);
-            }} size="small" color="primary">
-            Aprender más
-            </Button>
-      </CardActions>
-    </Card>
-        </div>    
-    </div>
   )
+
+
 }
 
 export default Cards
