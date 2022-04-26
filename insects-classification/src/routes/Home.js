@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGroup, Form, Button, Card, Container, Carousel } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 function Home() {
   return (

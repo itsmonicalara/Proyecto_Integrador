@@ -20,7 +20,7 @@ connection.once('open', function() {
 })
 
 // Add a spider to the database
-spiderRoutes.route('/add').post(function(req, res) {
+spiderRoutes.route('/add_spider').post(function(req, res) {
     let spider = new Spider(req.body);
     spider.save()
         .then(spider => {
@@ -32,7 +32,7 @@ spiderRoutes.route('/add').post(function(req, res) {
 });
 
 // Retrieve all the spiders in the database
-spiderRoutes.route('/').get(function(req, res) {
+spiderRoutes.route('/get_spiders').get(function(req, res) {
     Spider.find(function(err, proyecto_db) {
         if (err) {
             console.log(err);
@@ -43,7 +43,7 @@ spiderRoutes.route('/').get(function(req, res) {
 });
 
 // Get a single spider by id
-spiderRoutes.route('/:id').get(function(req, res) {
+spiderRoutes.route('/spider/:id').get(function(req, res) {
     let id = req.params.id;
     Spider.findById(id, function(err, spider) {
         res.json(spider);
@@ -51,10 +51,10 @@ spiderRoutes.route('/:id').get(function(req, res) {
 });
 
 // Update a spider by id
-spiderRoutes.route('/update/:id').post(function(req, res) {
+spiderRoutes.route('/spider/update/:id').post(function(req, res) {
     Spider.findById(req.params.id, function(err, spider) {
         if (!spider)
-            res.status(404).send("data is not found");
+            res.status(404).send("Data is not found");
         else
             spider.name = req.body.name;
             spider.description = req.body.description;
@@ -71,6 +71,15 @@ spiderRoutes.route('/update/:id').post(function(req, res) {
             });
     });
 });
+
+// Erase a spider by id
+spiderRoutes.route('/spider/delete/:id').get(function(req, res) {
+    Spider.findByIdAndRemove({_id: req.params.id}, function(err, spider) {
+        if (err) res.json(err);
+        else res.json('Successfully removed');
+    });
+});
+
 
 app.use('/proyecto_db', spiderRoutes);
 

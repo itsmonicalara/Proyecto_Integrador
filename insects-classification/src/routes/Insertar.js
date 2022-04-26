@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FormGroup, Form, Button, Card } from 'react-bootstrap';
+import { Form, Button, Card } from 'react-bootstrap';
 
 function Insertar(){
 
@@ -41,7 +41,7 @@ function Insertar(){
           family: data.family,
           scientificName: data.scientificName
         };
-        axios.post("http://localhost:4000/proyecto_db/add", userData).then((response) => {
+        axios.post("http://localhost:4000/proyecto_db/add_spider", userData).then((response) => {
           console.log(response.status);
           console.log(response.data.token);
           routeChange();

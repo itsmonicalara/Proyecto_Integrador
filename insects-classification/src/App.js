@@ -2,7 +2,6 @@ import './styles/App.css';
 import Login from './routes/Login';
 import { useAuth0 } from '@auth0/auth0-react';
 import MainHeader from './routes/MainHeader';
-import { Link } from "react-router-dom";
 import Home from './routes/Home';
 
 

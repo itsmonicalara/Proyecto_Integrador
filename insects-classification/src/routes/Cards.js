@@ -1,30 +1,14 @@
-import React, { useEffect, useS, useState} from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import image_reptil from '../media/lizard.jpg';
-import Alert from '@material-ui/lab/Alert';
-import Collapse from '@material-ui/core/Collapse';
-import CloseIcon from '@material-ui/icons/Close';
-import IconButton from '@material-ui/core/IconButton';
+import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 import CardInsectos from '../componentes/cardInsecto';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FormGroup, Form, Button, Container,Row,Col } from 'react-bootstrap';
+import { Button, Container,Row,Col } from 'react-bootstrap';
 
 
 function Cards()  {
- 
-  // const modealInstertar = false
 
-
-
-  const URL = "http://localhost:4000/proyecto_db"
+  const URL = "http://localhost:4000/proyecto_db/get_spiders";
   let navigate = useNavigate(); 
   const getData = async () => {
     const response = axios.get(URL);
@@ -32,8 +16,6 @@ function Cards()  {
   }
 
   const [list, setList] = useState([]);
-  
-  
 
   useEffect(() =>{
 
@@ -41,7 +23,6 @@ function Cards()  {
       setList(response.data);
     })
   }, [])
-
 
   const routeChange = () =>{ 
     let path = '/insertar'; 
@@ -61,9 +42,6 @@ function Cards()  {
                 </Button>
             </Row>
         </Container>
-      
-        
-
           {
             list.map((spider) =>(
               <Container>
@@ -75,17 +53,11 @@ function Cards()  {
                     />
                   </Col> 
                 </Row>
-              </Container>
-              
-            
-            ))
-              
+              </Container>         
+            ))         
           }
      </div>
-
   )
-
-
 }
 
 export default Cards

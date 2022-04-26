@@ -1,0 +1,25 @@
+[{
+  "name": "Tarantula",
+  "description": "Las tarántulas dan escalofríos a algunas personas debido a sus cuerpos y piernas grandes y peludos. Pero estas arañas son inofensivas para los humanos (a excepción de una picadura dolorosa), y su veneno leve es más débil que el de una abeja típica. Entre los entusiastas de los arácnidos, estas arañas se han convertido en mascotas populares.",
+  "danger": true,
+  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Brachypelma_smithi_2009_G03.jpg/1200px-Brachypelma_smithi_2009_G03.jpg",
+  "species": "Aracnido",
+  "family": "Aracnido",
+  "scientificName": "Spy"
+},{
+  "name": "Viuda Negra",
+  "description": "La hembra mide hasta unos 50 mm con las patas extendidas, es de color negro carbón brillante y posee una mancha de color rojo en forma de reloj de arena en la cara inferior del abdomen. El macho mide 12 mm y pesa treinta veces menos. Las patas son grandes y cada empalme es marrón anaranjado en el medio y negro en los extremos.",
+  "danger": true,
+  "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/LatrodectusMactansVentral34.JPG",
+  "species": "Aracnido",
+  "family": "Aracnido",
+  "scientificName": "Spy"
+},{
+  "name": "Araña Patona",
+  "description": "Algo",
+  "danger": "true",
+  "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/62268744/medium.jpeg",
+  "species": ".",
+  "family": ".",
+  "scientificName": "."
+}]

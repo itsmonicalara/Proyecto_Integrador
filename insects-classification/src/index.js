@@ -9,7 +9,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { render } from "react-dom";
 import Cards from './routes/Cards';
 import Header from './Header';
 import Map from './routes/Map';
