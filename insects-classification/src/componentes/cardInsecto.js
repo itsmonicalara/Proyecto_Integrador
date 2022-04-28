@@ -17,11 +17,13 @@ const useStyles = makeStyles({
       marginTop: '100px',
       marginLeft: '70px',
       display: 'inline-block',
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'row',
     },
     media: {
-      height: 140,
-    },
+      height: 170,
+    }
 });
 
 
