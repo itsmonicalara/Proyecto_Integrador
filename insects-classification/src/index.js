@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Cards from './routes/Cards';
 import Header from './Header';
-import Map from './routes/Map';
+import Events from './routes/Events';
 import Profile from './routes/Profile';
 import Logout from './routes/Logout';
 import Insertar from './routes/Insertar';
@@ -30,7 +30,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="listings" element={<><Navbar /><Cards /></>} />
-        <Route path="events" element={<><Header /><Map /></>} />
+        <Route path="events" element={<><Navbar /><Events /></>} />
         <Route path="tool" element={<><Header /></>} />
         <Route path="account" element={<><Header /><Profile /><Logout /></>} />
         <Route path="logout" element={<><Header /><Logout /></>} />
