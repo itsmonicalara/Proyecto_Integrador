@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-const Card4 = ({ spider }) => {
+const CardTemplate = ({ spider }) => {
 
   const [open, setOpen] = React.useState(true);
 
@@ -65,7 +65,7 @@ const Card4 = ({ spider }) => {
   )
 };
 
-export default Card4;
+export default CardTemplate;
 
 
 

@@ -1,12 +1,10 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
-import CardInsectos from '../componentes/cardInsecto';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button, Container,Row,Col } from 'react-bootstrap';
 import '../styles/Cards.css'
-import { Grid, Card, Col, Row, Button, Text } from "@nextui-org/react";
-import Card4 from '../componentes/CardTemplate';
+import { Grid, Button, Text } from "@nextui-org/react";
+import CardTemplate from '../componentes/CardTemplate';
 
 function Cards()  {
 
@@ -33,9 +31,7 @@ function Cards()  {
 
   return (
     <div>
-        <br></br>
      
-        {/* <Container> */}
         <div className='cards-title'>
           <Text
             h1
@@ -54,16 +50,11 @@ function Cards()  {
         </div>
 
         <div className='cards-container'>
-          {/* <Grid.Container gap={2} justify="center">
-            <Grid xs={4}>
-              <Card4 />
-            </Grid>            
-          </Grid.Container>       */}
           {
             list.map((spider) =>(
               <Grid.Container gap={2} justify="center">
                 <Grid xs={4}>
-                    <Card4
+                    <CardTemplate
                       key={spider._id}
                       spider = {spider}
                     />
@@ -71,34 +62,9 @@ function Cards()  {
               </Grid.Container>          
             ))         
           }
-
         </div>
 
         
-
-        
-
-          {/* <Row className="d-inline-flex p-2 col-example">
-
-          <Button className="cards-button" class="text-center" size="lg" variant="primary" type="submit" onClick={routeChange}>  
-              Insertar Araña
-                </Button>
-            </Row>
-        </Container>
-          {
-            list.map((spider) =>(
-              <Container>
-                <Row>
-                  <Col>
-                    <CardInsectos
-                      key={spider._id}
-                      spider = {spider}
-                    />
-                  </Col> 
-                </Row>
-              </Container>         
-            ))         
-          } */}
      </div>
   )
 }
