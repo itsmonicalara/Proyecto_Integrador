@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button, Container,Row,Col } from 'react-bootstrap';
 import '../styles/Cards.css'
 import { Grid, Card, Col, Row, Button, Text } from "@nextui-org/react";
-
+import { Card4 } from '../componentes/CardTemplate';
 
 function Cards()  {
 
@@ -66,22 +66,13 @@ function Cards()  {
         <div className='cards-container'>
           <Grid.Container gap={2} justify="center">
             <Grid xs={4}>
-              <MockItem text="1 of 3" />
+              <Card4 />
             </Grid>
             <Grid xs={4}>
-              <MockItem text="2 of 3" />
+              <Card4/>
             </Grid>
             <Grid xs={4}>
-              <MockItem text="3 of 3" />
-            </Grid>
-            <Grid xs={4}>
-              <MockItem text="4 of 3" />
-            </Grid>
-            <Grid xs={4}>
-              <MockItem text="5 of 3" />
-            </Grid>
-            <Grid xs={4}>
-              <MockItem text="6 of 3" />
+              <Card4/>
             </Grid>
           </Grid.Container>      
         </div>
