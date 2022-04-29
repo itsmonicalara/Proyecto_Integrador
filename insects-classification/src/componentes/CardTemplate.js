@@ -1,18 +1,26 @@
 import React from "react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-export const Card4 = () => (
-  <Card cover css={{ w: "100%" }}>
+const Card4 = ({ spider }) => {
+
+  const [open, setOpen] = React.useState(true);
+
+  const newTo = { 
+    pathname: `/item/${spider._id}`
+  };
+  
+  return (
+    <Card cover css={{ w: "100%" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text h3 color="white">
-          Tarantula
+          {spider.name}
         </Text>
       </Col>
     </Card.Header>
     <Card.Body>
       <Card.Image
-        src="https://upload.wikimedia.org/wikipedia/commons/9/98/Brachypelma_smithi_2009_G03.jpg"
+        src={spider.url}
         height={300}
         width="100%"
         alt="Card example background"
@@ -54,7 +62,10 @@ export const Card4 = () => (
       </Row>
     </Card.Footer>
   </Card>
-);
+  )
+};
+
+export default Card4;
 
 
 

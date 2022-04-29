@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button, Container,Row,Col } from 'react-bootstrap';
 import '../styles/Cards.css'
 import { Grid, Card, Col, Row, Button, Text } from "@nextui-org/react";
-import { Card4 } from '../componentes/CardTemplate';
+import Card4 from '../componentes/CardTemplate';
 
 function Cards()  {
 
