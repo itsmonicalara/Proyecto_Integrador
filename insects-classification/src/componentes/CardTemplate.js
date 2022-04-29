@@ -1,12 +1,10 @@
 import React from "react";
-import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { Card, Col, Row, Text } from "@nextui-org/react";
 import { Link} from "react-router-dom";
 
 
 
 const CardTemplate = ({ spider }) => {
-
-  const [open, setOpen] = React.useState(true);
 
   const newTo = { 
     pathname: `/item/${spider._id}`

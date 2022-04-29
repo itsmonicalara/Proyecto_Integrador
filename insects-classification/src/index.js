@@ -10,10 +10,9 @@ import {
   Route,
 } from "react-router-dom";
 import Cards from './routes/Cards';
-import Header from './Header';
 import Events from './routes/Events';
 import Profile from './routes/Profile';
-import Logout from './routes/Logout';
+// import Logout from './routes/Logout';
 import Insertar from './routes/Insertar';
 import DetailCardInsect from './routes/DetailCardInsect';
 import Navbar from './componentes/Navbar';
@@ -33,8 +32,8 @@ ReactDOM.render(
         <Route path="events" element={<><Navbar /><Events /></>} />
         <Route path="tool" element={<><Navbar /></>} />
         <Route path="account" element={<><Navbar /><Profile /></>} />
-        <Route path="logout" element={<><Navbar /><Logout /></>} />
-        <Route path="insertar" element={<><Header /><Insertar /></>} />
+        {/* <Route path="logout" element={<><Navbar /><Logout /></>} /> */}
+        <Route path="insertar" element={<><Navbar /><Insertar /></>} />
         <Route path="/item/:id" element={<><Navbar /><DetailCardInsect /></>} />
       </Routes>
     </Auth0Provider>
