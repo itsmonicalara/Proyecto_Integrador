@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Text } from "@nextui-org/react";
+import { Text, Image } from "@nextui-org/react";
 import '../styles/DetailCardInsect.css'
 
 function DetailCardInsect(){
@@ -39,12 +39,22 @@ function DetailCardInsect(){
 
             <div className='detail-insect-container'>
               <Text h1>{insecto.name}</Text>  
-              <img src={insecto.url} className='img-fluid shadow-4' alt='...' />
+              <br></br>
+              <Image
+                width={400}
+                height={250}  
+                src={insecto.url}
+                alt="Default Image"
+                objectFit="cover"
+              />
+              <br></br>      
               <p className="text-justify">
               {insecto.description}
-              </p>                   
+              </p>
+              
+
             </div>     
        </div>    
-    )
+    );
 }
 export default DetailCardInsect
