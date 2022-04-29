@@ -31,16 +31,6 @@ function Cards()  {
     navigate(path);
   }
 
-  const MockItem = ({ text }) => {
-    return (
-      <Card color="primary" css={{ h: "$24" }}>
-        <Text h6 size={15} color="white" css={{ mt: 0 }}>
-          {text}
-        </Text>
-      </Card>
-    );
-  };
-
   return (
     <div>
         <br></br>
@@ -64,17 +54,24 @@ function Cards()  {
         </div>
 
         <div className='cards-container'>
-          <Grid.Container gap={2} justify="center">
+          {/* <Grid.Container gap={2} justify="center">
             <Grid xs={4}>
               <Card4 />
-            </Grid>
-            <Grid xs={4}>
-              <Card4/>
-            </Grid>
-            <Grid xs={4}>
-              <Card4/>
-            </Grid>
-          </Grid.Container>      
+            </Grid>            
+          </Grid.Container>       */}
+          {
+            list.map((spider) =>(
+              <Grid.Container gap={2} justify="center">
+                <Grid xs={4}>
+                    <Card4
+                      key={spider._id}
+                      spider = {spider}
+                    />
+                </Grid> 
+              </Grid.Container>          
+            ))         
+          }
+
         </div>
 
         
