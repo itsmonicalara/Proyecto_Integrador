@@ -16,7 +16,7 @@ function Profile() {
             h1
             size={60}
             css={{
-              textGradient: "45deg, $blue500 -20%, $pink500 50%",
+              textGradient: "45deg, #CF3C3C -20%, #CFCF2B 50%",
               marginTop: "3%",
               marginLeft: "3%",
             }}
