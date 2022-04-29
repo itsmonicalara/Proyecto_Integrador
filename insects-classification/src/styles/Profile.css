@@ -1,9 +1,7 @@
-.profile-info > img {
-    width: 56;
-    height: 56;
+h2 { 
+    margin-left: 3%;
 }
 
-.profile_info {
-    margin-top: 120px;
-    margin-left: 80px;
+p {
+    margin-left: 3%;
 }
