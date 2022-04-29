@@ -39,10 +39,10 @@ const CardTemplate = ({ spider }) => {
       <Row>
         <Col>
           <Text color="#000" size={12}>
-            Available soon.
+            {spider.scientificName}
           </Text>
           <Text color="#000" size={12}>
-            Get notified.
+            {spider.family}
           </Text>
         </Col>
         <Col>
