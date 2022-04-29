@@ -35,7 +35,7 @@ ReactDOM.render(
         <Route path="account" element={<><Header /><Profile /><Logout /></>} />
         <Route path="logout" element={<><Header /><Logout /></>} />
         <Route path="insertar" element={<><Header /><Insertar /></>} />
-        <Route path="/item/:id" element={<><Header /><DetailCardInsect /></>} />
+        <Route path="/item/:id" element={<><Navbar /><DetailCardInsect /></>} />
       </Routes>
     </Auth0Provider>
     </Router>

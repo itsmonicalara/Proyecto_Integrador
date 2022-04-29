@@ -1,5 +1,8 @@
 import React from "react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { Link} from "react-router-dom";
+
+
 
 const CardTemplate = ({ spider }) => {
 
@@ -47,7 +50,7 @@ const CardTemplate = ({ spider }) => {
         </Col>
         <Col>
           <Row justify="flex-end">
-            <Button flat auto rounded color="secondary">
+            {/* <Button flat auto rounded color="secondary">
               <Text
                 css={{ color: "inherit" }}
                 size={12}
@@ -56,7 +59,18 @@ const CardTemplate = ({ spider }) => {
               >
                 Más info.
               </Text>
-            </Button>
+            </Button> */}
+
+            <Link className="cards-link" to={newTo}>
+               <Text
+                   css={{ color: "inherit" }}
+                   size={13}
+                   weight="bold"
+                   transform="uppercase"
+                >
+                   Más info.
+                 </Text>
+            </Link>
           </Row>
         </Col>
       </Row>
