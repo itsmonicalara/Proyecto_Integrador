@@ -32,8 +32,6 @@ function Navbar() {
                 </NavLink>
             </NavMenu>
             <NavBtn>
-                {/* <NavBtnLink to ="/logout">Cerrar sesión</NavBtnLink>
-                 */}
                  <Button className='nav-button' color="secondary" auto onClick={() => logout({ returnTo: window.location.origin })}>
                    Cerrar sesión
                  </Button>

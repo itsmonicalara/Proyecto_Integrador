@@ -31,9 +31,9 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="listings" element={<><Navbar /><Cards /></>} />
         <Route path="events" element={<><Navbar /><Events /></>} />
-        <Route path="tool" element={<><Header /></>} />
-        <Route path="account" element={<><Header /><Profile /><Logout /></>} />
-        <Route path="logout" element={<><Header /><Logout /></>} />
+        <Route path="tool" element={<><Navbar /></>} />
+        <Route path="account" element={<><Navbar /><Profile /></>} />
+        <Route path="logout" element={<><Navbar /><Logout /></>} />
         <Route path="insertar" element={<><Header /><Insertar /></>} />
         <Route path="/item/:id" element={<><Navbar /><DetailCardInsect /></>} />
       </Routes>
