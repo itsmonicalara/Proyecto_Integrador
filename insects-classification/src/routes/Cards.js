@@ -3,7 +3,9 @@ import axios from 'axios';
 import CardInsectos from '../componentes/cardInsecto';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container,Row,Col } from 'react-bootstrap';
+// import { Button, Container,Row,Col } from 'react-bootstrap';
+import '../styles/Cards.css'
+import { Grid, Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 
 function Cards()  {
@@ -29,15 +31,68 @@ function Cards()  {
     navigate(path);
   }
 
+  const MockItem = ({ text }) => {
+    return (
+      <Card color="primary" css={{ h: "$24" }}>
+        <Text h6 size={15} color="white" css={{ mt: 0 }}>
+          {text}
+        </Text>
+      </Card>
+    );
+  };
+
   return (
     <div>
-        <h1 >hacer padding a la Lista</h1>
         <br></br>
      
-        <Container>
-        <h1 className="justify-content-center text-center">Lista de Arañas</h1>
-          <Row className="d-inline-flex p-2 col-example">
-          <Button class="text-center" size="lg" variant="primary" type="submit" onClick={routeChange}>  
+        {/* <Container> */}
+        <div className='cards-title'>
+          <Text
+            h1
+            size={60}
+            css={{
+              textGradient: "45deg, $blue500 -20%, $pink500 50%",
+            }}
+            weight="bold"
+            >
+            Lista de arañas
+          </Text>
+        </div>
+
+        <div className='cards-button'>
+          <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir araña</Button>
+        </div>
+
+        <div className='cards-container'>
+          <Grid.Container gap={2} justify="center">
+            <Grid xs={4}>
+              <MockItem text="1 of 3" />
+            </Grid>
+            <Grid xs={4}>
+              <MockItem text="2 of 3" />
+            </Grid>
+            <Grid xs={4}>
+              <MockItem text="3 of 3" />
+            </Grid>
+            <Grid xs={4}>
+              <MockItem text="4 of 3" />
+            </Grid>
+            <Grid xs={4}>
+              <MockItem text="5 of 3" />
+            </Grid>
+            <Grid xs={4}>
+              <MockItem text="6 of 3" />
+            </Grid>
+          </Grid.Container>      
+        </div>
+
+        
+
+        
+
+          {/* <Row className="d-inline-flex p-2 col-example">
+
+          <Button className="cards-button" class="text-center" size="lg" variant="primary" type="submit" onClick={routeChange}>  
               Insertar Araña
                 </Button>
             </Row>
@@ -55,7 +110,7 @@ function Cards()  {
                 </Row>
               </Container>         
             ))         
-          }
+          } */}
      </div>
   )
 }

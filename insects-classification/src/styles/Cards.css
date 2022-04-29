@@ -1,0 +1,20 @@
+/* .cards-button{
+    float: right;
+} */
+
+.cards-title{
+    margin-left: 2%;
+}
+
+.nav-button{
+    float: right;
+    margin-top: -4.5%;
+    margin-right: 6%;
+    /* make text bigger */
+    font-size: 1em;
+}
+
+.cards-container{
+    margin-top: 5%;
+}
+

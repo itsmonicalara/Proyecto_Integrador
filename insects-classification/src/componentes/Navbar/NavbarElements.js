@@ -9,6 +9,7 @@ export const Nav = styled.nav`
     justify-content: space-between;
     padding: 0.5rem calc((100vw - 1000px) / 2);
     z-index: 10;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 `
 
 export const NavLink = styled(Link)`
@@ -20,9 +21,14 @@ export const NavLink = styled(Link)`
     height: 100%;
     cursor: pointer;
     font-size: 1.1rem;
+    font-weight: 500;
     &.active{
-        color: #15cdfc;
+        color: #7FC2FF;
     }
+    &:hover{
+        font-weight: bold;
+        color: #7FC2FF;
+    }    
 `
 
 export const Bars = styled(FaBars)`

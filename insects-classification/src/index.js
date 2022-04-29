@@ -16,6 +16,7 @@ import Profile from './routes/Profile';
 import Logout from './routes/Logout';
 import Insertar from './routes/Insertar';
 import DetailCardInsect from './routes/DetailCardInsect';
+import Navbar from './componentes/Navbar';
 
 
 
@@ -28,7 +29,7 @@ ReactDOM.render(
     redirectUri={window.location.origin}>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="listings" element={<><Header /><Cards /></>} />
+        <Route path="listings" element={<><Navbar /><Cards /></>} />
         <Route path="events" element={<><Header /><Map /></>} />
         <Route path="tool" element={<><Header /></>} />
         <Route path="account" element={<><Header /><Profile /><Logout /></>} />
