@@ -21,7 +21,16 @@ let Event = new Schema({
     adress: {
         type: String,
         required: true
-    }
+    }, 
+    lat:{
+        type: Number
+    }, 
+    lng:{
+        type: Number
+    }, 
+    poster:{
+        type: String
+    }, 
 });
 
 module.exports = mongoose.model('Event', Event);
