@@ -9,6 +9,7 @@ const spiderRoutes = express.Router();
 const PORT = 4000;
 
 let Spider = require('./spider.model');
+let Event = require('./event.model');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,6 +32,19 @@ spiderRoutes.route('/add_spider').post(function(req, res) {
         });
 });
 
+// Add a event to the database
+spiderRoutes.route('/add_event').post(function(req, res) {
+    let event = new Event(req.body);
+    event.save()
+        .then(event => {
+            res.status(200).json({'Status': 'Event added successfully'});
+        })
+        .catch(err => {
+            res.status(400).send('Status: Adding new Event failed');
+        });
+});
+
+
 // Retrieve all the spiders in the database
 spiderRoutes.route('/get_spiders').get(function(req, res) {
     Spider.find(function(err, proyecto_db) {
@@ -42,6 +56,18 @@ spiderRoutes.route('/get_spiders').get(function(req, res) {
     });
 });
 
+// Retrieve all the events in the database
+spiderRoutes.route('/get_event').get(function(req, res) {
+    Event.find(function(err, proyecto_db) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(proyecto_db);
+        }
+    });
+});
+
+
 // Get a single spider by id
 spiderRoutes.route('/spider/:id').get(function(req, res) {
     let id = req.params.id;
@@ -49,6 +75,16 @@ spiderRoutes.route('/spider/:id').get(function(req, res) {
         res.json(spider);
     });
 });
+
+// Get a single event by id
+spiderRoutes.route('/event/:id').get(function(req, res) {
+    let id = req.params.id;
+    Event.findById(id, function(err, event) {
+        res.json(event);
+    });
+});
+
+
 
 // Update a spider by id
 spiderRoutes.route('/spider/update/:id').post(function(req, res) {
@@ -72,9 +108,38 @@ spiderRoutes.route('/spider/update/:id').post(function(req, res) {
     });
 });
 
+
+// Update a event by id
+spiderRoutes.route('/event/update/:id').post(function(req, res) {
+    Event.findById(req.params.id, function(err, event) {
+        if (!event)
+            res.status(404).send("Data is not found");
+        else
+            event.name = req.body.name;
+            event.description = req.body.description;
+            event.date = req.body.date;
+            event.time = req.body.time;
+            event.adress = req.body.adress;
+            event.save().then(event => {
+                res.json('Event updated!');
+            })
+            .catch(err => {
+                res.status(400).send("Update not possible");
+            });
+    });
+});
+
 // Erase a spider by id
 spiderRoutes.route('/spider/delete/:id').get(function(req, res) {
     Spider.findByIdAndRemove({_id: req.params.id}, function(err, spider) {
+        if (err) res.json(err);
+        else res.json('Successfully removed');
+    });
+});
+
+// Erase a spider by id
+spiderRoutes.route('/event/delete/:id').get(function(req, res) {
+    Event.findByIdAndRemove({_id: req.params.id}, function(err, event) {
         if (err) res.json(err);
         else res.json('Successfully removed');
     });
