@@ -24,18 +24,18 @@ const localizer = dateFnsLocalizer({
 
 const events = [
 	{
-		title: 'Big Meeting',
+		title: 'Reunión',
 		allDay: true,
 		start: new Date(2022, 3, 29),
 		end: new Date(2022, 3, 29),
 	},
 	{
-		title: 'Vacation',
+		title: 'Vacaciones',
 		start: new Date(2022, 3, 7),
 		end: new Date(2022, 3, 10),
 	},
 	{
-		title: 'Conference',
+		title: 'Conferencia',
 		start: new Date(2022, 3, 20),
 		end: new Date(2022, 3, 23),
 	},
