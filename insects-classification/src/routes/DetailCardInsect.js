@@ -2,8 +2,8 @@ import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-
+import { Text, Image } from "@nextui-org/react";
+import '../styles/DetailCardInsect.css'
 
 function DetailCardInsect(){
     const {id} = useParams();
@@ -22,17 +22,39 @@ function DetailCardInsect(){
             })
     },[id, ids]);
 
-      return (
-            <div>
-                    <h1>Hola</h1>
-                <Container>
-                        <h1>{insecto.name}</h1>
-                        <img src={insecto.url} className='img-fluid shadow-4' alt='...' />
-                        <p className="text-justify">
-                        {insecto.description}
-                          </p>                   
-                </Container>
-           </div>    
-      )
+    return (
+        <div className='detail-insect'>
+            <div className='detail-insect-title'>
+                <Text
+                  h1
+                  size={60}
+                  css={{
+                    textGradient: "45deg, #C9CF1B 0%, #76CFA8 50%"
+                  }}
+                  weight="bold"
+                   >
+                  Detalle de araña
+                </Text>   
+            </div>
+
+            <div className='detail-insect-container'>
+              <Text h1>{insecto.name}</Text>  
+              <br></br>
+              <Image
+                width={400}
+                height={250}  
+                src={insecto.url}
+                alt="Default Image"
+                objectFit="cover"
+              />
+              <br></br>      
+              <p className="text-justify">
+              {insecto.description}
+              </p>
+              
+
+            </div>     
+       </div>    
+    );
 }
 export default DetailCardInsect

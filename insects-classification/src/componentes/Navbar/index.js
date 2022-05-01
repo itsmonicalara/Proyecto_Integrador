@@ -1,10 +1,14 @@
 import React from 'react'
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements'
+import { Nav, NavLink, Bars, NavMenu, NavBtn } from './NavbarElements'
 import { Button } from "@nextui-org/react";
 import '../../styles/Navbar.css';
-import { Text } from "@nextui-org/react";
+import { useAuth0 } from '@auth0/auth0-react'
+
 
 function Navbar() {
+
+    const { logout } = useAuth0();
+
   return (
     <>
         <Nav>
@@ -27,9 +31,7 @@ function Navbar() {
                 </NavLink>
             </NavMenu>
             <NavBtn>
-                {/* <NavBtnLink to ="/logout">Cerrar sesión</NavBtnLink>
-                 */}
-                 <Button className='nav-button' color="secondary" auto onClick={() => { window.location.href='/logout' }}>
+                 <Button className='nav-button' color="secondary" auto onClick={() => logout({ returnTo: window.location.origin })}>
                    Cerrar sesión
                  </Button>
             </NavBtn>

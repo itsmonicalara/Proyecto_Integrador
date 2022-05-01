@@ -1,20 +1,31 @@
-/* .cards-button{
-    float: right;
-} */
-
 .cards-title{
     margin-left: 2%;
+    margin-top: 2%;
 }
 
 .nav-button{
     float: right;
     margin-top: -4.5%;
     margin-right: 6%;
-    /* make text bigger */
     font-size: 1em;
 }
 
 .cards-container{
     margin-top: 5%;
 }
+
+.cards-link{
+    text-decoration: none;
+    color: #7928C9;
+    text-align: center;
+    margin-top: 2%;
+    background-color: #DBC8F0;
+    border-radius: 25%;
+    padding: 0.6em;    
+}
+
+.cards-link:hover{
+    color: #B95DD9;
+}
+
 
