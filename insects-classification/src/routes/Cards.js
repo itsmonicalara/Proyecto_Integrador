@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Cards.css'
-import { Grid, Button, Text } from "@nextui-org/react";
+import { Grid, Button, Text, Container } from "@nextui-org/react";
 import CardTemplate from '../componentes/CardTemplate';
 
 function Cards()  {
@@ -50,18 +50,21 @@ function Cards()  {
         </div>
 
         <div className='cards-container'>
-          {
-            list.map((spider) =>(
-              <Grid.Container gap={2} justify="center">
-                <Grid xs={4}>
-                    <CardTemplate
-                      key={spider._id}
-                      spider = {spider}
-                    />
-                </Grid> 
-              </Grid.Container>          
-            ))         
-          }
+          <Container>
+            <Grid.Container gap={2} justify="center">
+              {
+                list.map((spider) =>(
+                  <Grid xs={4}>
+                      <CardTemplate
+                        key={spider._id}
+                        spider = {spider}
+                      />
+                  </Grid>
+                ))
+              }
+            </Grid.Container>
+          </Container>
+          
         </div>
 
         
