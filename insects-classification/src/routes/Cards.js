@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Cards.css'
-import { Grid, Button, Text, Container, Modal, Input, Spacer } from "@nextui-org/react";
+import { Grid, Button, Text, Container } from "@nextui-org/react";
 import CardTemplate from '../componentes/CardTemplate';
 
 function Cards()  {

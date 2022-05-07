@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { Text, Modal, Input, Button } from "@nextui-org/react";
+import { Text, Modal, Input, Button, Container, Grid } from "@nextui-org/react";
+import CardTemplate from '../componentes/CardTemplate';
 
 function Insertar(){
 
@@ -62,9 +63,42 @@ function Insertar(){
         handler();
       }, []);
 
+      // Show cards
+      const URL = "http://localhost:4000/proyecto_db/get_spiders";
+      const getData = async () => {
+        const response = axios.get(URL);
+        return response;
+      }
+
+      const [list, setList] = useState([]);
+
+      useEffect(() =>{
+
+        getData("/").then((response) =>{
+          setList(response.data);
+        })
+      }, [])
+
 
       return (
         <div>
+
+        <div className='cards-container'>
+          <Container>
+            <Grid.Container gap={2} justify="center">
+              {
+                list.map((spider) =>(
+                  <Grid xs={4}>
+                      <CardTemplate
+                        key={spider._id}
+                        spider = {spider}
+                      />
+                  </Grid>
+                ))
+              }
+            </Grid.Container>
+          </Container>   
+        </div>  
 
         <Modal
           closeButton
