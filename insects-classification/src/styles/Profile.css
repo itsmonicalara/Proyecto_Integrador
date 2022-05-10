@@ -5,3 +5,7 @@ h2 {
 p {
     margin-left: 3%;
 }
+
+.profile_info {
+    height: 100vh;
+}

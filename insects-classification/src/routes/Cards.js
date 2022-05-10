@@ -18,7 +18,6 @@ function Cards()  {
   const [list, setList] = useState([]);
 
   useEffect(() =>{
-
     getData("/").then((response) =>{
       setList(response.data);
     })
