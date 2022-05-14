@@ -2,8 +2,9 @@ import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Text, Image } from "@nextui-org/react";
+import { Text, Image, Button } from "@nextui-org/react";
 import '../styles/DetailCardInsect.css'
+import LeftArrow from '../media/left-arrow.png';
 
 function DetailCardInsect(){
     const {id} = useParams();
@@ -24,6 +25,9 @@ function DetailCardInsect(){
 
     return (
         <div className='detail-insect'>
+            <div className='back-button'>
+                <Button color='warning' shadow auto onClick={() => window.history.back()}>Atras</Button>
+            </div>
             <div className='detail-insect-title'>
                 <Text
                   h1
