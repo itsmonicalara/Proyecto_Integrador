@@ -14,7 +14,7 @@ let Event = require('./event.model');
 app.use(cors());
 app.use(bodyParser.json());
 // Name of database: proyecto_db
-mongoose.connect('mongodb://127.0.0.1:27017/proyecto_db', { useNewUrlParser: true });
+mongoose.connect('mongodb://mongo:27017/proyecto_db', { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
