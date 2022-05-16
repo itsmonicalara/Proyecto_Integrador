@@ -39,7 +39,7 @@ function Cards()  {
             }}
             weight="bold"
             >
-            Lista de arañas
+            Lista de insectos
           </Text>
         </div>
 
