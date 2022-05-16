@@ -6,6 +6,9 @@ import { Link} from "react-router-dom";
 
 const CardEvent = ({ event }) => {
 
+  const newTo = { 
+    pathname: `/event/${event._id}`
+  };
   
   return (
     
@@ -55,7 +58,7 @@ const CardEvent = ({ event }) => {
               </Text>
             </Button> */}
 
-            {/* <Link className="cards-link" > */}
+             <Link className="cards-link" to={newTo}> 
                <Text
                    css={{ color: "inherit" }}
                    size={13}
@@ -64,7 +67,7 @@ const CardEvent = ({ event }) => {
                 >
                    Más info.
                  </Text>
-            {/* </Link> */}
+             </Link> 
           </Row>
         </Col>
       </Row>

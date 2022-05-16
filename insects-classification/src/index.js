@@ -16,7 +16,7 @@ import Profile from './routes/Profile';
 import Insertar from './routes/Insertar';
 import DetailCardInsect from './routes/DetailCardInsect';
 import Navbar from './componentes/Navbar';
-
+import DetailsEvent from './routes/DetailsEvent';
 
 
 ReactDOM.render(
@@ -35,6 +35,7 @@ ReactDOM.render(
         {/* <Route path="logout" element={<><Navbar /><Logout /></>} /> */}
         <Route path="insertar" element={<><Navbar /><Insertar /></>} />
         <Route path="/item/:id" element={<><Navbar /><DetailCardInsect /></>} />
+        <Route path="/event/:id" element={<><Navbar /><DetailsEvent /></>} />
       </Routes>
     </Auth0Provider>
     </Router>
