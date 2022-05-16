@@ -1,8 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, Button, Card } from 'react-bootstrap';
+import { Text, Modal, Input, Button, Container, Grid } from "@nextui-org/react";
+import CardTemplate from '../componentes/CardTemplate';
 
 function Insertar(){
 
@@ -13,8 +13,8 @@ function Insertar(){
       }
 
     const [data, setData] = useState({
-        name: "",
-        description: "",
+          name: "",
+          description: "",
           danger: "",
           url: "",
           species:"",
@@ -48,96 +48,142 @@ function Insertar(){
         });
       }; 
 
+      // Modal test
+      const [visible, setVisible] = React.useState(false);
+    
+      const handler = () => setVisible(true);
+    
+      const closeHandler = () => {
+        setVisible(false);
+        console.log("closed");
+      };
+
+      // Call handler when page is loaded
+      useEffect(() => {
+        handler();
+      }, []);
+
+      // Show cards
+      const URL = "http://localhost:4000/proyecto_db/get_spiders";
+      const getData = async () => {
+        const response = axios.get(URL);
+        return response;
+      }
+
+      const [list, setList] = useState([]);
+
+      useEffect(() =>{
+
+        getData("/").then((response) =>{
+          setList(response.data);
+        })
+      }, [])
+
+
       return (
         <div>
-          <h1>Agrega Insecto</h1>
-        <Card>
-            <Card.Header as="h5">Agrega Insecto</Card.Header>
-            <Card.Body>
-        <Form  onClick={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formsSpiderName">
-                <Form.Label htmlFor="name">
-                Nombre
-                <Form.Control
-                    type="text"
-                    name="name"
-                    value={data.name}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-5" controlId="formsSpiderDescription">
-                <Form.Label htmlFor="description">
-                Descipcion
-                <Form.Control
-                    type="text"
-                    name="description"
-                    value={data.description}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formsSpiderDanger">
-                <Form.Label htmlFor="danger">
-                ¿Es peligrosa?
-                <Form.Control
-                    type="text"
-                    name="danger"
-                    value={data.danger}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formsSpiderImage">
-                <Form.Label htmlFor="url">
-                URL imagen
-                <Form.Control
-                    type="text"
-                    name="url"
-                    value={data.url}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formsSpiderSpecie">
-                <Form.Label htmlFor="species">
-                Especie
-                <Form.Control
-                    type="text"
-                    name="species"
-                    value={data.species}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formsSpiderFamily">
-                <Form.Label htmlFor="family">
-                Familia
-                <Form.Control
-                    type="text"
-                    name="family"
-                    value={data.family}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formsSpiderScientificName">
-                <Form.Label htmlFor="scientificName">
-                Nombre Scientifico
-                <Form.Control
-                    type="text"
-                    name="scientificName"
-                    value={data.scientificName}
-                    onChange={handleChange}
-                />
-                </Form.Label>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
+
+        <div className='cards-container'>
+          <Container>
+            <Grid.Container gap={2} justify="center">
+              {
+                list.map((spider) =>(
+                  <Grid xs={4}>
+                      <CardTemplate
+                        key={spider._id}
+                        spider = {spider}
+                      />
+                  </Grid>
+                ))
+              }
+            </Grid.Container>
+          </Container>   
+        </div>  
+
+        <Modal
+          closeButton
+          blur
+          aria-labelledby="modal-title"
+          open={visible}
+          onClose={closeHandler}
+          onClick={handleSubmit}
+        >
+        <Modal.Header>
+            <Text id="modal-title" size={18}>
+              Añade una{' '}
+              <Text b size={18}>
+                araña
+              </Text>
+            </Text>
+          </Modal.Header>
+          <Modal.Body>
+            <Input
+              type="text"
+              placeholder='Nombre de la araña'
+              name="name"
+              value={data.name}
+              onChange={handleChange}
+            >
+            </Input>
+            <Input
+              type="text"
+              placeholder='Descripción de la araña'
+              name="description"
+              value={data.description}
+              onChange={handleChange}
+            >
+            </Input>
+            <Input
+              type="text"
+              placeholder='¿Es peligrosa?'
+              name="danger"
+              value={data.danger}
+              onChange={handleChange}
+            >
+            </Input>
+            <Input
+              type="text"
+              placeholder='Url de la araña'
+              name="url"
+              value={data.url}
+              onChange={handleChange}
+            >
+            </Input>
+            <Input
+              type="text"
+              placeholder='Especie'
+              name="species"
+              value={data.species}
+              onChange={handleChange}
+            >
+            </Input>
+            <Input
+              type="text"
+              placeholder='Familia'
+              name="family"
+              value={data.family}
+              onChange={handleChange}
+            >
+            </Input>
+            <Input
+              type="text"
+              placeholder='Nombre científico'
+              name="scientificName"
+              value={data.scientificName}
+              onChange={handleChange}
+            >
+            </Input>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button auto flat color="error" onClick={routeChange}>
+              Cerrar
             </Button>
-          </Form>
-          </Card.Body>
-        </Card>
+            <Button auto type='submit' onClick={closeHandler}>
+              Enviar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+          
         </div>
       )
 

@@ -12,6 +12,8 @@
 
 .cards-container{
     margin-top: 5%;
+    /* make cards go in rows of 3 */
+
 }
 
 .cards-link{
@@ -26,6 +28,14 @@
 
 .cards-link:hover{
     color: #B95DD9;
+}
+
+/* Modal testing css */
+.modal-button{
+    float: right;
+    margin-top: 1%;
+    margin-right: 6%;
+    font-size: 1em;
 }
 
 
