@@ -14,7 +14,7 @@ import Profile from './routes/Profile';
 import Insertar from './routes/Insertar';
 import DetailCardInsect from './routes/DetailCardInsect';
 import Navbar from './componentes/Navbar';
-
+import Clasificador from './routes/Clasificador';
 
 
 ReactDOM.render(
@@ -28,7 +28,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="listings" element={<><Navbar /><Cards /></>} />
         <Route path="events" element={<><Navbar /><Events /></>} />
-        <Route path="tool" element={<><Navbar /></>} />
+        <Route path="tool" element={<><Navbar /><Clasificador /></>} />
         <Route path="account" element={<><Navbar /><Profile /></>} />
         <Route path="insertar" element={<><Navbar /><Insertar /></>} />
         <Route path="/item/:id" element={<><Navbar /><DetailCardInsect /></>} />
