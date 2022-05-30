@@ -1,8 +1,8 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Cards.css'
+import '../styles/Cards.css';
 import { Grid, Button, Text, Container } from "@nextui-org/react";
 import CardTemplate from '../componentes/CardTemplate';
 
@@ -39,12 +39,12 @@ function Cards()  {
             }}
             weight="bold"
             >
-            Lista de arañas
+            Lista de insectos
           </Text>
         </div>
 
         <div className='cards-button'>
-          <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir araña</Button>
+          <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir insecto</Button>
         </div>
 
         <div className='cards-container'>

@@ -31,7 +31,7 @@ function Home() {
           }}
           weight="bold"
         >
-          de Arañas
+          de Insectos
         </Text>
         <Text
           h1
@@ -46,7 +46,7 @@ function Home() {
      </div>
      <div className='home-paragraph'>
         <Text h2 size={28}>
-          En esta aplicación podrás clasificar a las arañas de México. Ayuda a proteger las especies endemicas.
+          En esta aplicación podrás clasificar a algunos insectos de México. Ayuda a proteger las especies endemicas.
         </Text>
       </div>  
       

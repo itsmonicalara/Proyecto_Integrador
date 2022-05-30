@@ -18,7 +18,7 @@ function Navbar() {
             <Bars/>
             <NavMenu>
                 <NavLink to="/listings" activeStyle>
-                    Lista de Arañas
+                    Lista de Insectos
                 </NavLink>
                 <NavLink to="/events" activeStyle>
                     Eventos

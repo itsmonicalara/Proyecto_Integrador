@@ -1,18 +1,36 @@
 import React from "react";
 import { Card, Col, Row, Text } from "@nextui-org/react";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+
+import '../styles/CardEvent.css';
+
+import axios from 'axios';
+
+
+
 
 
 
 const CardEvent = ({ event }) => {
 
+  const newTo = { 
+    pathname: `/event/${event._id}`
+  };
+
+  
+
+ 
   
   return (
     
+    
     <Card cover css={{ w: "100%" , marginBottom: 14}} >
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 , marginBottom: 14}}>
+    <Col>
+  
+    </Col>
       <Col>
-        <Text h3 color="white">
+        <Text className="textTitle" h3 color="white">
           {event.name}
         </Text>
       </Col>
@@ -44,18 +62,9 @@ const CardEvent = ({ event }) => {
         </Col>
         <Col>
           <Row justify="flex-end">
-            {/* <Button flat auto rounded color="secondary">
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Más info.
-              </Text>
-            </Button> */}
+           
 
-            {/* <Link className="cards-link" > */}
+             <Link className="cards-link" to={newTo}> 
                <Text
                    css={{ color: "inherit" }}
                    size={13}
@@ -64,7 +73,7 @@ const CardEvent = ({ event }) => {
                 >
                    Más info.
                  </Text>
-            {/* </Link> */}
+             </Link> 
           </Row>
         </Col>
       </Row>
