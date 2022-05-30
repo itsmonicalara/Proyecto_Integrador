@@ -119,7 +119,7 @@ function Insertar(){
           <Modal.Body>
             <Input
               type="text"
-              placeholder='Nombre de la araña'
+              placeholder='Nombre del insecto'
               name="name"
               value={data.name}
               onChange={handleChange}
@@ -127,7 +127,7 @@ function Insertar(){
             </Input>
             <Input
               type="text"
-              placeholder='Descripción de la araña'
+              placeholder='Descripción del insecto'
               name="description"
               value={data.description}
               onChange={handleChange}
@@ -135,7 +135,7 @@ function Insertar(){
             </Input>
             <Input
               type="text"
-              placeholder='¿Es peligrosa?'
+              placeholder='¿El insecto es peligrosa?'
               name="danger"
               value={data.danger}
               onChange={handleChange}
@@ -143,7 +143,7 @@ function Insertar(){
             </Input>
             <Input
               type="text"
-              placeholder='Url de la araña'
+              placeholder='Url del insecto'
               name="url"
               value={data.url}
               onChange={handleChange}
@@ -151,7 +151,7 @@ function Insertar(){
             </Input>
             <Input
               type="text"
-              placeholder='Especie'
+              placeholder='Especie del insecto'
               name="species"
               value={data.species}
               onChange={handleChange}
@@ -159,7 +159,7 @@ function Insertar(){
             </Input>
             <Input
               type="text"
-              placeholder='Familia'
+              placeholder='Familia del insecto'
               name="family"
               value={data.family}
               onChange={handleChange}
@@ -167,7 +167,7 @@ function Insertar(){
             </Input>
             <Input
               type="text"
-              placeholder='Nombre científico'
+              placeholder='Nombre científico del insecto'
               name="scientificName"
               value={data.scientificName}
               onChange={handleChange}

@@ -2,19 +2,23 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { Text, Modal, Input, Button, Container, Grid } from "@nextui-org/react";
-import CardEvent from '../componentes/CardEvent';
+import '../styles/InsertarEvento.css';
 
 function InsertarEventos(){
 
     let navigate = useNavigate(); 
 
     const routeChange = () =>{ 
-        navigate(-1);
+        let path = '/events'; 
+        navigate(path);
       }
+
+      
 
     const [data, setData] = useState({
           name: "",
           description: "",
+          date: "",
           time: "",
           adress:"",
           lat:0.0,
@@ -31,10 +35,13 @@ function InsertarEventos(){
       };
     
       const handleSubmit = (e) => {
+        
+          console.log("se pico")
         e.preventDefault();
         const userData = {
           name: data.name,
           description: data.description,
+          date: data.date,
           time: data.time,
           adress: data.adress,
           lat: data.lat,
@@ -46,143 +53,134 @@ function InsertarEventos(){
           console.log(response.data.token);
           routeChange();
         });
+       
       }; 
-
-      // Modal test
-      const [visible, setVisible] = React.useState(false);
-    
-      const handler = () => setVisible(true);
-    
-      const closeHandler = () => {
-        setVisible(false);
-        console.log("closed");
-      };
-
-      // Call handler when page is loaded
-      useEffect(() => {
-        handler();
-      }, []);
-
-      // Show cards
-      const URL = "http://localhost:4000/proyecto_db/get_event";
-      const getData = async () => {
-        const response = axios.get(URL);
-        return response;
-      }
-
-      const [list, setList] = useState([]);
-
-      useEffect(() =>{
-
-        getData("/").then((response) =>{
-          setList(response.data);
-        })
-      }, [])
 
 
       return (
         <div>
 
-        <div className='cards-container'>
-          <Container>
-            <Grid.Container gap={2} justify="center">
-              {
-                list.map((event) =>(
-                  <Grid xs={4}>
-                      <CardEvent
-                        key={event._id}
-                        evento = {event}
-                      />
-                  </Grid>
-                ))
-              }
-            </Grid.Container>
-          </Container>   
+        <div className='cards-insertEvent'>
+        <Text 
+        className='events-title'
+          h1
+          size={60}
+          css={{
+            textGradient: "45deg, $yellow500 -20%, $red500 100%",
+          }}
+          weight="bold"
+        >
+          Inserta evento
+        </Text> 
+            <div className='formsContainer'>
+                <h4>
+                Nombre del evento: 
+                </h4>
+                <Input
+                type="text"
+                placeholder='Nombre del evento '
+                name="name"
+                value={data.name}
+                onChange={handleChange}
+                style={{ width: '30%' }}
+                >
+                </Input>
+
+                <h4>
+                Descripción del evento:
+                </h4>
+                <Input
+                type="text"
+                placeholder='Descripción del evento'
+                name="description"
+                value={data.description}
+                onChange={handleChange}
+                >
+                </Input>
+
+                <h4>
+                Fecha del evento:
+                </h4>
+                <Input
+                type="text"
+                placeholder='Fecha del evento '
+                name="date"
+                value={data.date}
+                onChange={handleChange}
+                >
+                </Input>
+
+                <h4>
+                Hora del evento:
+                </h4>
+                <Input
+                type="text"
+                placeholder='Hora del evento'
+                name="time"
+                value={data.time}
+                onChange={handleChange}
+                >
+                </Input>
+
+                <h4>
+                Dirección del evento:
+                </h4>
+                <Input
+                type="text"
+                placeholder='Dirección del evento '
+                name="adress"
+                value={data.adress}
+                onChange={handleChange}
+                >
+                </Input>
+
+                <h4>
+                Latitud del evento:
+                </h4>
+                <Input
+                type="text"
+                placeholder='Lat evento'
+                name="lat"
+                value={Number(data.lat)}
+                onChange={handleChange}
+                >
+                </Input>
+
+                <h4>
+                Longitud del evento:
+                </h4>
+                <Input
+                type="text"
+                placeholder='Long evento'
+                name="lng"
+                value={Number(data.lng)}
+                onChange={handleChange}
+                >
+                </Input>
+
+                <h4>
+                Poster del evento:
+                </h4>
+
+                <Input
+                type="text"
+                placeholder='Poster del evento'
+                name="poster"
+                value={data.poster}
+                onChange={handleChange}
+                className ="inputPoster"
+                >
+                </Input>
+
+                <Button auto type='submit' onClick={handleSubmit} className='botonEnviar'>
+                Enviar
+                </Button>
+            </div>
+
+            
+         
         </div>  
 
-        <Modal
-          closeButton
-          blur
-          aria-labelledby="modal-title"
-          open={visible}
-          onClose={closeHandler}
-          onClick={handleSubmit}
-        >
-        <Modal.Header>
-            <Text id="modal-title" size={18}>
-              Añade una{' '}
-              <Text b size={18}>
-                araña
-              </Text>
-            </Text>
-          </Modal.Header>
-          <Modal.Body>
-            <Input
-              type="text"
-              placeholder='Nombre del evento '
-              name="name"
-              value={data.name}
-              onChange={handleChange}
-            >
-            </Input>
-            <Input
-              type="text"
-              placeholder='Descripción del evento'
-              name="description"
-              value={data.description}
-              onChange={handleChange}
-            >
-            </Input>
-            <Input
-              type="text"
-              placeholder='Hora del evento'
-              name="12:30pm"
-              value={data.time}
-              onChange={handleChange}
-            >
-            </Input>
-            <Input
-              type="text"
-              placeholder='Dirección del evento'
-              name="addres"
-              value={data.adress}
-              onChange={handleChange}
-            >
-            </Input>
-            <Input
-              type="text"
-              placeholder='Lat evento'
-              name="lat"
-              value={Number(data.lat)}
-              onChange={handleChange}
-            >
-            </Input>
-            <Input
-              type="text"
-              placeholder='Long evento'
-              name="lng"
-              value={Number(data.lng)}
-              onChange={handleChange}
-            >
-            </Input>
-            <Input
-              type="text"
-              placeholder='Poster del evento'
-              name="poster"
-              value={data.poster}
-              onChange={handleChange}
-            >
-            </Input>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button auto flat color="error" onClick={routeChange}>
-              Cerrar
-            </Button>
-            <Button auto type='submit' onClick={closeHandler}>
-              Enviar
-            </Button>
-          </Modal.Footer>
-        </Modal>
           
         </div>
       )

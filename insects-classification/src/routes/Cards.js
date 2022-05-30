@@ -44,7 +44,7 @@ function Cards()  {
         </div>
 
         <div className='cards-button'>
-          <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir araña</Button>
+          <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir insecto</Button>
         </div>
 
         <div className='cards-container'>

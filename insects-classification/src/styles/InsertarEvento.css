@@ -1,0 +1,44 @@
+
+.events-title{
+    margin-top: 3%;
+    margin-left: 3%;
+}
+.formsContainer{
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+
+}
+
+h4{
+    padding-top: 30px;
+    font-size: 30px;
+
+}
+
+
+.botonEnviar{
+
+    width: 40%;
+    margin: auto;
+    font-size: 25px;
+
+}
+
+.inputPoster{
+    margin-bottom: 20px;
+    
+}
+
+.cards-insertEvent{
+    margin-top: 2%;
+    
+}
+
+.nextui-c-jeuecp nextui-input{
+
+    font-size: 50px;
+}
+

@@ -1,5 +1,5 @@
 import React, { useEffect, useState}  from 'react'
-import '../styles/Events.css'
+import '../styles/Events.css';
 import { Text, Button } from '@nextui-org/react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Cards.css'
 import CardEvent from '../componentes/CardEvent';
 import { useAuth0 } from '@auth0/auth0-react';
+
+
 
 
 function Events() {    
@@ -53,7 +55,7 @@ function Events() {
         {
             user[role].isAdmin && 
             <div className='cards-button'>
-              <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir araña</Button>
+              <Button className='nav-button' color="primary" size="xl" auto onClick={() => { routeChange() }}>Añadir evento</Button>
             </div>
               
           }

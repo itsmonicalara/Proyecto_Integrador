@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Col, Row, Text } from "@nextui-org/react";
 import { Link, useNavigate} from "react-router-dom";
 
+import '../styles/CardEvent.css';
+
 import axios from 'axios';
 
 
@@ -28,7 +30,7 @@ const CardEvent = ({ event }) => {
   
     </Col>
       <Col>
-        <Text h3 color="white">
+        <Text className="textTitle" h3 color="white">
           {event.name}
         </Text>
       </Col>
