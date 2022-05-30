@@ -48,16 +48,6 @@ const CardTemplate = ({ spider }) => {
         </Col>
         <Col>
           <Row justify="flex-end">
-            {/* <Button flat auto rounded color="secondary">
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Más info.
-              </Text>
-            </Button> */}
 
             <Link className="cards-link" to={newTo}>
                <Text

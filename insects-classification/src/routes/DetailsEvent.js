@@ -53,7 +53,7 @@ function DetailsEvent(){
 
             </div>   
             <div>
-            <CardMap
+            <CardMap 
             googleMapURL={mapURL}
             containerElement={<div style={{ height :'400px'}}/>}
             mapElement={<div style={{height :'100%'}}/>}

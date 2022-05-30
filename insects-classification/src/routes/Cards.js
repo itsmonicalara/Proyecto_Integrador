@@ -1,8 +1,8 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Cards.css'
+import '../styles/Cards.css';
 import { Grid, Button, Text, Container } from "@nextui-org/react";
 import CardTemplate from '../componentes/CardTemplate';
 

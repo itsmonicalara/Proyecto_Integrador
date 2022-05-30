@@ -15,6 +15,7 @@ import Insertar from './routes/Insertar';
 import DetailCardInsect from './routes/DetailCardInsect';
 import Navbar from './componentes/Navbar';
 import DetailsEvent from './routes/DetailsEvent';
+import InsertarEventos from './routes/InsertarEventos';
 
 
 ReactDOM.render(
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path="insertar" element={<><Navbar /><Insertar /></>} />
         <Route path="/item/:id" element={<><Navbar /><DetailCardInsect /></>} />
         <Route path="/event/:id" element={<><Navbar /><DetailsEvent /></>} />
+        <Route path="insertarEvento" element={<><Navbar /><InsertarEventos /></>} />
       </Routes>
     </Auth0Provider>
     </Router>

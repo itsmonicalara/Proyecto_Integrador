@@ -1,8 +1,9 @@
-import React from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+import React, {useEffect} from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import { Text, Avatar } from '@nextui-org/react';
-import '../styles/Profile.css'
+import '../styles/Profile.css';
 import mySvg from '../media/scattered-forcefields.svg';
+
 
      
 function Profile() {
@@ -10,6 +11,10 @@ function Profile() {
     if (isLoading) {
         return <div>Loading...</div>;
     }
+    console.log(user);
+
+    const role = 'https://example.com/auth0-delegated-admin';
+     
 
   return (
     isAuthenticated && (
@@ -32,28 +37,12 @@ function Profile() {
             <h2>{user.name}</h2>
             <p>{user.email}</p>
             <p>{user.email_verified}</p>
-            {/* <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br> */}
+            {
+              user[role].isAdmin && 
+                <h1>Ya plox</h1>
+              
+            }
+            
         </div>
     )
   )
