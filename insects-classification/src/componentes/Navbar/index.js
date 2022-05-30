@@ -23,7 +23,7 @@ function Navbar() {
                 <NavLink to="/events" activeStyle>
                     Eventos
                 </NavLink>
-                <NavLink to="/tool" activeStyle>
+                <NavLink to="/clasificador" activeStyle>
                     Clasificador
                 </NavLink>
                 <NavLink to="/account" activeStyle>
