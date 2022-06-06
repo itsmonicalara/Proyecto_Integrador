@@ -41,7 +41,7 @@ function Insertar(){
           family: data.family,
           scientificName: data.scientificName
         };
-        axios.post("http://localhost:4000/proyecto_db/add_spider", userData).then((response) => {
+        axios.post("http://localhost:27017/proyecto_db/add_spider", userData).then((response) => {
           console.log(response.status);
           console.log(response.data.token);
           routeChange();
@@ -64,7 +64,7 @@ function Insertar(){
       }, []);
 
       // Show cards
-      const URL = "http://localhost:4000/proyecto_db/get_spiders";
+      const URL = "http://localhost:27017/proyecto_db/get_spiders";
       const getData = async () => {
         const response = axios.get(URL);
         return response;

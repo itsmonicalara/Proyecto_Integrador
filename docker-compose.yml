@@ -9,7 +9,7 @@ services:
   api-server:
     image: api-server
     ports:
-      - "4000:4000"
+      - "27017:27017"
     depends_on:
       - mongo
 

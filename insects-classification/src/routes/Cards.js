@@ -8,7 +8,7 @@ import CardTemplate from '../componentes/CardTemplate';
 
 function Cards()  {
 
-  const URL = "http://localhost:4000/proyecto_db/get_spiders";
+  const URL = "http://localhost:27017/proyecto_db/get_spiders";
   let navigate = useNavigate(); 
   const getData = async () => {
     const response = axios.get(URL);

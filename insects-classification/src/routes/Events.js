@@ -13,7 +13,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function Events() {    
 
-  const URL = "http://localhost:4000/proyecto_db/get_event";
+  const URL = "http://localhost:27017/proyecto_db/get_event";
   let navigate = useNavigate(); 
   const getData = async () => {
     const response = axios.get(URL);

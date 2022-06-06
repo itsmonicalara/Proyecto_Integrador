@@ -48,7 +48,7 @@ function InsertarEventos(){
           lng: data.lng,
           poster: data.poster
         };
-        axios.post("http://localhost:4000/proyecto_db/add_event", userData).then((response) => {
+        axios.post("http://localhost:27017/proyecto_db/add_event", userData).then((response) => {
           console.log(response.status);
           console.log(response.data.token);
           routeChange();

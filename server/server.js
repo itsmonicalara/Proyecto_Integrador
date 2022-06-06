@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const spiderRoutes = express.Router();
 
-const PORT = 4000;
+const PORT = 27017;
 
 let Spider = require('./spider.model');
 let Event = require('./event.model');
@@ -14,11 +14,12 @@ let Event = require('./event.model');
 app.use(cors());
 app.use(bodyParser.json());
 // Name of database: proyecto_db
-mongoose.connect('mongodb://mongo:27017/proyecto_db', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/proyecto_db', { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
 })
+
 
 // Add a spider to the database
 spiderRoutes.route('/add_spider').post(function(req, res) {

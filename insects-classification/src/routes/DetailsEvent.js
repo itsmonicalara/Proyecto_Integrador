@@ -17,7 +17,7 @@ function DetailsEvent(){
     const [ids] = useState(id); 
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/proyecto_db/event/${id}`)
+        axios.get(`http://localhost:27017/proyecto_db/event/${id}`)
             .then(res => {
                 console.log(res)
                 setEvento(res.data)
