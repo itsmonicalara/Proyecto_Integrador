@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^1.0.0",
+    "@tensorflow/tfjs": "^1.0.0",
     "@auth0/auth0-react": "^1.9.0",
     "@googlemaps/react-wrapper": "^1.1.33",
     "@material-ui/core": "^4.12.3",
